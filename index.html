@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To Do List | Flávio Cardoso</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Salve a sua próxima tarefa</h2>
+            <form action="" class="header--form">
+                <input type="text" class="task-title" placeholder="Qual a sua próxima tarefa?">
+                <button class="btn">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </form>
+        </div>
+            
+        <div class="task-list-container">
+            <h3>Essas são as suas tarefas</h3>
+            <ul class="task-list">
+                <li class="task-box template hide">
+                    <span class="task-title"></span>
+                    <i class="fa-solid fa-check done-btn"></i>
+                    <i class="fa-solid fa-xmark remove-btn"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/b1c951fffb.js" crossorigin="anonymous"></script>
+</body>
+</html>

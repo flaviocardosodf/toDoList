@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to left, #81c9fa, #003785);
+    color: #fff;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    margin-top: 40px;
+}
+
+.header--form {
+    position: relative;
+}
+
+.header--form input {
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    background: #fff;
+    color: #003785;
+    padding: 15px;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 32px;
+}
+
+.header--form input ::placeholder {
+    color: #003785;
+}
+
+.btn {
+    background: #fff;
+    cursor: pointer;
+    border: 0;
+    transition: .5s;
+    outline: none;
+    width: 60px;
+    height: 51px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 32px;
+}
+
+.fa-plus {
+    font-size: 25px;
+}
+
+.task-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.task-box {
+    text-align: left;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 3px solid #003785;
+    background-color: #fff;
+    color: #003785;
+    margin: 0 auto 10px auto;
+    padding-left: 15px;
+    transition: .5s;
+    font-weight: 700;
+    border-radius: 32px;
+    position: relative;
+}
+
+.task-box i {
+   position: absolute;
+   top: 15%;
+   height: 40px;
+   transition: .5s;
+   cursor: pointer;
+   width: 30px;
+   padding: 5px;
+   font-size: 25px;
+}
+
+.done-btn {
+    right: 40px;
+}
+
+.remove-btn {
+    right: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.done {
+    text-decoration: line-through;
+}
