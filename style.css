@@ -10,97 +10,50 @@ body {
     padding-top: 30px;
 }
 
+h1 {
+    font-size: 38px;
+}
+
 .container {
     max-width: 500px;
     width: 100%;
     margin: 0 auto;
 }
 
-.header {
-    margin-top: 40px;
-}
-
-.header--form {
-    position: relative;
-}
-
-.header--form input {
-    box-sizing: border-box;
+.container input {
+    padding: 8px;
+    border-radius: 32px;
     border: 0;
     outline: 0;
-    background: #fff;
-    color: #003785;
-    padding: 15px;
-    font-size: 18px;
-    width: 100%;
-    border-radius: 32px;
+    width: 300px;
 }
 
-.header--form input ::placeholder {
-    color: #003785;
-}
-
-.btn {
-    background: #fff;
-    cursor: pointer;
+.container button {
+    padding: 8px;
+    background: #003785;
     border: 0;
-    transition: .5s;
-    outline: none;
-    width: 60px;
-    height: 51px;
-    position: absolute;
-    top: 0;
-    right: 0;
     border-radius: 32px;
+    font-weight: bold;
+    color: #fff;
+    width:100px;
+    margin-left: 16px;
+    cursor: pointer;
 }
 
-.fa-plus {
-    font-size: 25px;
-}
-
-.task-list {
+.container ul {
     list-style: none;
-    padding-left: 0;
-}
-
-.task-box {
     text-align: left;
-    height: 50px;
-    line-height: 50px;
-    border-bottom: 3px solid #003785;
-    background-color: #fff;
-    color: #003785;
-    margin: 0 auto 10px auto;
-    padding-left: 15px;
-    transition: .5s;
-    font-weight: 700;
-    border-radius: 32px;
-    position: relative;
 }
 
-.task-box i {
-   position: absolute;
-   top: 15%;
-   height: 40px;
-   transition: .5s;
-   cursor: pointer;
-   width: 30px;
-   padding: 5px;
-   font-size: 25px;
+.container li {
+    margin: 16px 0;
+    max-width: 50ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.done-btn {
-    right: 40px;
-}
-
-.remove-btn {
-    right: 0;
-}
-
-.hide {
-    display: none;
-}
-
-.done {
-    text-decoration: line-through;
+@media screen and (min-width: 320px) {
+    .container button {
+        margin-top: 16px;
+    }
 }

@@ -1,47 +1,54 @@
-function addTarefa() {
-    const addTitle = document.querySelector(".task-title").value;
+const entrada = document.querySelector(".entrada");
+const lista = document.querySelector(".container ul");
+const btn = document.querySelector(".container button");
 
-    if(addTitle) {
-        const template = document.querySelector(".template");
+let tarefas = JSON.parse(localStorage.getItem("@listaTarefas")) || [];
 
-        const novaTarefa = template.cloneNode(true);
+function mostrarTarefas() {
+    lista.innerHTML = "";
 
-        novaTarefa.querySelector(".task-title").textContent = addTitle;
+    tarefas.map((toDo) => {
+        let li = document.createElement("li");
+        let textoTarefa = document.createTextNode(toDo);
 
-        novaTarefa.classList.remove("template");
-        novaTarefa.classList.remove("hide");
+        let link = document.createElement("button");
+        link.setAttribute("href", "#");
+        let textoLink = document.createTextNode("Remover");
+        link.appendChild(textoLink);
 
-        const lista = document.querySelector(".task-list");
-        lista.appendChild(novaTarefa);
+        let posicao = tarefas.indexOf(toDo);
+        
+        link.setAttribute("onclick", `deletar(${posicao})`);
 
-        const removeBtn = novaTarefa.querySelector(".remove-btn").addEventListener("click", function() {
-            removeTarefa(this);
-        });
+        li.appendChild(textoTarefa);
+        li.appendChild(link);
+        lista.appendChild(li);
+    })
+}
 
-        const doneBtn = novaTarefa.querySelector(".done-btn").addEventListener("click", function() {
-            concluiTarefa(this);
-        });
+mostrarTarefas();
 
-        document.querySelector(".task-title").value = "";
+function adicionar() {
+    if(entrada.value === ""){
+        alert("Digite alguma tarefa");
+        return false;
+    } else {
+        let novaTarefa = entrada.value;
 
+        tarefas.push(novaTarefa);
+        entrada.value = "";
+
+        mostrarTarefas();
+        salvarDados();
     }
 }
 
-function removeTarefa(tarefa) {
-    tarefa.parentNode.remove(true);
+function deletar(posicao) {
+    tarefas.splice(posicao, 1);
+    mostrarTarefas();
+    salvarDados();
 }
 
-function concluiTarefa(tarefa) {
-    const tarefaCompleta = tarefa.parentNode;
-
-    tarefaCompleta.classList.toggle("done");
+function salvarDados() {
+    localStorage.setItem("@listaTarefas", JSON.stringify(tarefas));
 }
-
-
-const addBtn = document.querySelector(".btn");
-
-addBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    addTarefa();
-});
